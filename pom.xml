@@ -37,8 +37,12 @@
                 <version>8.8.3</version>
                 <configuration>
                     <mainClass>application.CameraCalibration</mainClass>
+                    <failOnError>true</failOnError>
+                    <verbose>true</verbose>
+                    <allPermissions>true</allPermissions>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -48,6 +52,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!--
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
@@ -64,9 +69,19 @@
                     </descriptorRefs>
                 </configuration>
             </plugin>
+            -->
         </plugins>
     </build>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>oss-sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
 

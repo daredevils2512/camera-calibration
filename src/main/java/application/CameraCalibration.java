@@ -21,14 +21,14 @@ public class CameraCalibration extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			// load the FXML resource
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/CC_FX.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/CC_FX.fxml"));
 			// store the root element so that the controllers can use it
 			BorderPane rootElement = (BorderPane) loader.load();
 			// set a whitesmoke background
 			rootElement.setStyle("-fx-background-color: whitesmoke;");
 			// create and style a scene
 			Scene scene = new Scene(rootElement, 800, 600);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application.css").toExternalForm());
 			// create the stage with the given title and the previously created
 			// scene
 			primaryStage.setTitle("Camera Calibration");
@@ -45,6 +45,7 @@ public class CameraCalibration extends Application {
 	
 	public static void main(String[] args) {
 		// load the native OpenCV library
+		nu.pattern.OpenCV.loadShared();
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		
 		launch(args);
