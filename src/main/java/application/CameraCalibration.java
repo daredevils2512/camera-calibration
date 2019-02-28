@@ -21,7 +21,7 @@ public class CameraCalibration extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			// load the FXML resource
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("CC_FX.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/CC_FX.fxml"));
 			// store the root element so that the controllers can use it
 			BorderPane rootElement = (BorderPane) loader.load();
 			// set a whitesmoke background

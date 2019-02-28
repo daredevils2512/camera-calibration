@@ -220,7 +220,7 @@ public class CC_Controller {
 						{
 							// prepare the undistored image
 							Mat undistored = new Mat();
-							Calib3d.undistort(frame, undistored, intrinsic, distCoeffs);
+							Imgproc.undistort(frame, undistored, intrinsic, distCoeffs);
 							undistoredImage = mat2Image(undistored);
 						}
 						
